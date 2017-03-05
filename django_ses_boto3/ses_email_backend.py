@@ -9,7 +9,7 @@ from django.core.mail.message import sanitize_address
 
 class SESEmailBackend(BaseEmailBackend):
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(SESEmailBackend, self).__init__(*args, **kwargs)
         self.connection = None
         self._lock = threading.RLock()
 
